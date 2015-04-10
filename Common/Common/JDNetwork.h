@@ -15,6 +15,9 @@
 #import <Common/AsyncSocket.h>
 #import <Common/AsyncUdpSocket.h>
 #import <Common/MQTTKit.h>
+#import <Common/SGFocusImage.h>
+#import <Common/GDataXMLNode.h>
+
 #import <Common/SDImageCache.h>
 #import <Common/SDWebImageDecoder.h>
 #import <Common/SDWebImageDownloaderOperation.h>
@@ -28,6 +31,5 @@
 #import <Common/UIImage+WebP.h>
 #import <Common/UIImage+MultiFormat.h>
 #import <Common/UIImageView+HighlightedWebCache.h>
-#import <Common/SGFocusImage.h>
-#import <Common/GDataXMLNode.h>
+
 #endif
