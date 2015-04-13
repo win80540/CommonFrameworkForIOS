@@ -195,7 +195,7 @@ static JDNetworkHelp *_self;
                     if(octet[0] == 192 && octet[1] == 168){
                         *addr = ((struct sockaddr_in *)(sa_tab[RTAX_GATEWAY]))->sin_addr.s_addr;
                         r = 0;
-                        gateway = [NSString stringWithFormat:@"gateway address--%d.%d.%d.%d\n",octet[0],octet[1],octet[2],octet[3]];
+                        gateway = [NSString stringWithFormat:@"%d.%d.%d.%d\n",octet[0],octet[1],octet[2],octet[3]];
                         printf("%s",[gateWay UTF8String]);
 
                     }
