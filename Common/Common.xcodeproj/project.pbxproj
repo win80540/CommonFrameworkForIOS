@@ -21,6 +21,11 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
+		366373E51ADC22510056998E /* WeatherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 366373E41ADC22510056998E /* WeatherTests.m */; };
+		366373E61ADC24C00056998E /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 366B7E781AD7B4680008160D /* libxml2.dylib */; };
+		366373E71ADC24C50056998E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36BBDA391AD8095D0014722E /* libsqlite3.dylib */; };
+		366373E81ADC26A20056998E /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366B7E851AD7BE120008160D /* ImageIO.framework */; };
+		366373E91ADC26A70056998E /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366B7E871AD7BE1A0008160D /* MapKit.framework */; };
 		366B7D2F1AD7B1A10008160D /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B7D2E1AD7B1A10008160D /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		366B7D351AD7B1A10008160D /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 366B7D291AD7B1A10008160D /* Common.framework */; };
 		366B7D3C1AD7B1A10008160D /* CommonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 366B7D3B1AD7B1A10008160D /* CommonTests.m */; };
@@ -186,6 +191,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		366373E41ADC22510056998E /* WeatherTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherTests.m; sourceTree = "<group>"; };
 		366B7D291AD7B1A10008160D /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		366B7D2D1AD7B1A10008160D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		366B7D2E1AD7B1A10008160D /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
@@ -361,6 +367,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366373E91ADC26A70056998E /* MapKit.framework in Frameworks */,
+				366373E81ADC26A20056998E /* ImageIO.framework in Frameworks */,
+				366373E71ADC24C50056998E /* libsqlite3.dylib in Frameworks */,
+				366373E61ADC24C00056998E /* libxml2.dylib in Frameworks */,
 				366B7D351AD7B1A10008160D /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +428,7 @@
 			children = (
 				366B7D3B1AD7B1A10008160D /* CommonTests.m */,
 				366B7D391AD7B1A10008160D /* Supporting Files */,
+				366373E41ADC22510056998E /* WeatherTests.m */,
 			);
 			path = CommonTests;
 			sourceTree = "<group>";
@@ -968,6 +979,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				366373E51ADC22510056998E /* WeatherTests.m in Sources */,
 				366B7D3C1AD7B1A10008160D /* CommonTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1079,7 +1091,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/usr/include/libxml2.2,
 					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = Common/Info.plist;
@@ -1092,6 +1103,7 @@
 				MACH_O_TYPE = staticlib;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				VALIDATE_PRODUCT = NO;
 			};
 			name = Debug;
 		};
@@ -1107,7 +1119,6 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/usr/include/libxml2.2,
 					/usr/include/libxml2,
 				);
 				INFOPLIST_FILE = Common/Info.plist;
@@ -1126,6 +1137,7 @@
 		366B7D431AD7B1A10008160D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -1134,8 +1146,20 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = CommonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1143,12 +1167,25 @@
 		366B7D441AD7B1A10008160D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/usr/include/libxml2,
+				);
 				INFOPLIST_FILE = CommonTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
