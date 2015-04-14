@@ -33,7 +33,7 @@
 
 -(void)testPerformanceWeather{
     // This is an example of a performance test case.
-//    [self measureBlock:^{
+  [self measureBlock:^{
     JDWeatherInfo *weatherInfo = [[JDWeatherInfoHelper shareInstance] getLocalWeatherInfoRelocation:true];
     XCTAssertNotNil(weatherInfo,@"get weather faild");
     XCTestExpectation *expectation =  [self expectationWithDescription:@"getweather"];
@@ -51,7 +51,7 @@
         }
     }];
 
-//    }];
+   }];
 }
 
 - (void)testPerformanceExample {
