@@ -92,6 +92,10 @@
 		<data>
 		opwj6PeMEafyzl8GXTt1WKez+LA=
 		</data>
+		<key>Headers/JDAppStoreCheckUpdate.h</key>
+		<data>
+		0RGSBIq4NkOvSl7HeVR8BoA1YIw=
+		</data>
 		<key>Headers/JDBaseModel.h</key>
 		<data>
 		TzeksmjG3zc0qMkPsJgT8ai0Dhg=
@@ -138,7 +142,7 @@
 		</data>
 		<key>Headers/JDSideMenuViewController.h</key>
 		<data>
-		W/4twEIXNv8sfGbRwFgkm++UwXA=
+		goX/haGASIZz1IM2e5yFEABUGmA=
 		</data>
 		<key>Headers/JDSvUDIDTools.h</key>
 		<data>
@@ -146,7 +150,7 @@
 		</data>
 		<key>Headers/JDUIKit.h</key>
 		<data>
-		I8bl9gDT6+QiWpqsz+l2YGvJAkI=
+		vhzskDmcuoU6gUU+O1j9IF9Hnqg=
 		</data>
 		<key>Headers/JDUIViewAnimation.h</key>
 		<data>
@@ -162,7 +166,7 @@
 		</data>
 		<key>Headers/JeedaaMacroDefine.h</key>
 		<data>
-		7WzaqMxzMJSlHs1PueILZbA8XLY=
+		gbjP3lSzWuc1AT4XktFbvjHaa9k=
 		</data>
 		<key>Headers/MJRefresh.h</key>
 		<data>
@@ -379,6 +383,10 @@
 		<data>
 		opwj6PeMEafyzl8GXTt1WKez+LA=
 		</data>
+		<key>Headers/JDAppStoreCheckUpdate.h</key>
+		<data>
+		0RGSBIq4NkOvSl7HeVR8BoA1YIw=
+		</data>
 		<key>Headers/JDBaseModel.h</key>
 		<data>
 		TzeksmjG3zc0qMkPsJgT8ai0Dhg=
@@ -425,7 +433,7 @@
 		</data>
 		<key>Headers/JDSideMenuViewController.h</key>
 		<data>
-		W/4twEIXNv8sfGbRwFgkm++UwXA=
+		goX/haGASIZz1IM2e5yFEABUGmA=
 		</data>
 		<key>Headers/JDSvUDIDTools.h</key>
 		<data>
@@ -433,7 +441,7 @@
 		</data>
 		<key>Headers/JDUIKit.h</key>
 		<data>
-		I8bl9gDT6+QiWpqsz+l2YGvJAkI=
+		vhzskDmcuoU6gUU+O1j9IF9Hnqg=
 		</data>
 		<key>Headers/JDUIViewAnimation.h</key>
 		<data>
@@ -449,7 +457,7 @@
 		</data>
 		<key>Headers/JeedaaMacroDefine.h</key>
 		<data>
-		7WzaqMxzMJSlHs1PueILZbA8XLY=
+		gbjP3lSzWuc1AT4XktFbvjHaa9k=
 		</data>
 		<key>Headers/MJRefresh.h</key>
 		<data>

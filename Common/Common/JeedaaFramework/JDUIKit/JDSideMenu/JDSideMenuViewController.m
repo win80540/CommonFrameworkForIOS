@@ -214,6 +214,7 @@
     _maskView.alpha=_showAlpha;
     _isShowed=true;
     [UIView commitAnimations];
+    [self.leftMenuController viewDidAppear:false];
 }
 -(void)hidenMenu{
     [UIView beginAnimations:nil context:NULL];
@@ -226,8 +227,7 @@
     _maskView.alpha=_hideAlpha;
     _isShowed=false;
     [UIView commitAnimations];
-    //_LeftView.transform=CGAffineTransformIdentity;
-    //_LeftView.frame=CGRectMake(-CGRectGetWidth(self.view.bounds)/2.0, 0, CGRectGetWidth(self.view.bounds)/5.0*4, CGRectGetHeight(self.view.bounds));
+    [self.leftMenuController viewDidDisappear:false];
 }
 
 #pragma  mark - rotate orientation 

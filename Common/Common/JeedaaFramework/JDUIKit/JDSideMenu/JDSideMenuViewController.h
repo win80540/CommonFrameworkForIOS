@@ -13,6 +13,8 @@
 //@property (strong,nonatomic) UIViewController *rightMenuController;
 @property (strong,nonatomic) UIViewController *mainController;
 -(void)setBackgroundImage:(UIImage *)image;
+-(void)hidenMenu;
+-(void)showMenu;
 @end
 
 

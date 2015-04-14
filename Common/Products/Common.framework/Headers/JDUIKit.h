@@ -20,4 +20,5 @@
 #import <Common/MJRefresh.h>
 #import <Common/MMProgressHUD.h>
 #import <Common/SGFocusImage.h>
+#import <Common/JDAppStoreCheckUpdate.h>
 #endif

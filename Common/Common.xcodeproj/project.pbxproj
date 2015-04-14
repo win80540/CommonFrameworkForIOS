@@ -176,6 +176,8 @@
 		366B7E8F1AD7C7A00008160D /* JDDAL.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B7E8D1AD7C5220008160D /* JDDAL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		366B7E901AD7C7A40008160D /* JDSecret.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B7E8C1AD7C4E50008160D /* JDSecret.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		366B7E911AD7C7A60008160D /* JDNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B7E8B1AD7C1DF0008160D /* JDNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		369F26961ADCBEAD00CB51D9 /* JDAppStoreCheckUpdate.h in Headers */ = {isa = PBXBuildFile; fileRef = 369F26941ADCBEAD00CB51D9 /* JDAppStoreCheckUpdate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		369F26971ADCBEAD00CB51D9 /* JDAppStoreCheckUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F26951ADCBEAD00CB51D9 /* JDAppStoreCheckUpdate.m */; };
 		36BBDA3A1AD8095D0014722E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36BBDA391AD8095D0014722E /* libsqlite3.dylib */; };
 		36BBDA3C1AD8144D0014722E /* JDUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 36BBDA3B1AD811E80014722E /* JDUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
@@ -222,8 +224,8 @@
 		366B7D601AD7B2630008160D /* JDPostGPS.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDPostGPS.m; sourceTree = "<group>"; };
 		366B7D611AD7B2630008160D /* JDSvUDIDTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDSvUDIDTools.h; sourceTree = "<group>"; };
 		366B7D621AD7B2630008160D /* JDSvUDIDTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDSvUDIDTools.m; sourceTree = "<group>"; };
-		366B7D631AD7B2630008160D /* JDUIViewAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDUIViewAnimation.h; sourceTree = "<group>"; };
-		366B7D641AD7B2630008160D /* JDUIViewAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDUIViewAnimation.m; sourceTree = "<group>"; };
+		366B7D631AD7B2630008160D /* JDUIViewAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JDUIViewAnimation.h; path = ../JDUtility/JDUIViewAnimation.h; sourceTree = "<group>"; };
+		366B7D641AD7B2630008160D /* JDUIViewAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JDUIViewAnimation.m; path = ../JDUtility/JDUIViewAnimation.m; sourceTree = "<group>"; };
 		366B7D651AD7B2630008160D /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
 		366B7D661AD7B2630008160D /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
 		366B7D671AD7B2630008160D /* route.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = route.h; sourceTree = "<group>"; };
@@ -346,6 +348,8 @@
 		366B7E8B1AD7C1DF0008160D /* JDNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDNetwork.h; sourceTree = "<group>"; };
 		366B7E8C1AD7C4E50008160D /* JDSecret.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDSecret.h; sourceTree = "<group>"; };
 		366B7E8D1AD7C5220008160D /* JDDAL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDDAL.h; sourceTree = "<group>"; };
+		369F26941ADCBEAD00CB51D9 /* JDAppStoreCheckUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDAppStoreCheckUpdate.h; sourceTree = "<group>"; };
+		369F26951ADCBEAD00CB51D9 /* JDAppStoreCheckUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDAppStoreCheckUpdate.m; sourceTree = "<group>"; };
 		36BBDA391AD8095D0014722E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		36BBDA3B1AD811E80014722E /* JDUIKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDUIKit.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -444,10 +448,10 @@
 		366B7D451AD7B2630008160D /* JeedaaFramework */ = {
 			isa = PBXGroup;
 			children = (
+				366B7D6D1AD7B2630008160D /* JeedaaMacroDefine.h */,
 				366B7D461AD7B2630008160D /* JDUIKit */,
 				366B7D4C1AD7B2630008160D /* JDUtility */,
 				366B7D681AD7B2630008160D /* JDWeatherInfo */,
-				366B7D6D1AD7B2630008160D /* JeedaaMacroDefine.h */,
 				366B7D6E1AD7B2630008160D /* RefrenceLib */,
 			);
 			path = JeedaaFramework;
@@ -456,6 +460,8 @@
 		366B7D461AD7B2630008160D /* JDUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				366B7D631AD7B2630008160D /* JDUIViewAnimation.h */,
+				366B7D641AD7B2630008160D /* JDUIViewAnimation.m */,
 				366B7D471AD7B2630008160D /* JDSideMenu */,
 			);
 			path = JDUIKit;
@@ -495,11 +501,11 @@
 				366B7D601AD7B2630008160D /* JDPostGPS.m */,
 				366B7D611AD7B2630008160D /* JDSvUDIDTools.h */,
 				366B7D621AD7B2630008160D /* JDSvUDIDTools.m */,
-				366B7D631AD7B2630008160D /* JDUIViewAnimation.h */,
-				366B7D641AD7B2630008160D /* JDUIViewAnimation.m */,
 				366B7D651AD7B2630008160D /* NSString+MD5.h */,
 				366B7D661AD7B2630008160D /* NSString+MD5.m */,
 				366B7D671AD7B2630008160D /* route.h */,
+				369F26941ADCBEAD00CB51D9 /* JDAppStoreCheckUpdate.h */,
+				369F26951ADCBEAD00CB51D9 /* JDAppStoreCheckUpdate.m */,
 			);
 			path = JDUtility;
 			sourceTree = "<group>";
@@ -775,6 +781,7 @@
 				366B7E4C1AD7B2640008160D /* MKAnnotationView+WebCache.h in Headers */,
 				366B7E5A1AD7B2640008160D /* SDWebImageManager.h in Headers */,
 				366B7E2C1AD7B2640008160D /* MJRefresh.h in Headers */,
+				369F26961ADCBEAD00CB51D9 /* JDAppStoreCheckUpdate.h in Headers */,
 				36BBDA3C1AD8144D0014722E /* JDUIKit.h in Headers */,
 				366B7E011AD7B2640008160D /* route.h in Headers */,
 				366B7E2F1AD7B2640008160D /* MJRefreshConst.h in Headers */,
@@ -966,6 +973,7 @@
 				366B7E491AD7B2640008160D /* MMVectorImage.m in Sources */,
 				366B7DF41AD7B2640008160D /* JDImageTools.m in Sources */,
 				366B7E511AD7B2640008160D /* SDImageCache.m in Sources */,
+				369F26971ADCBEAD00CB51D9 /* JDAppStoreCheckUpdate.m in Sources */,
 				366B7E301AD7B2640008160D /* MJRefreshConst.m in Sources */,
 				366B7E6C1AD7B2640008160D /* UIView+WebCacheOperation.m in Sources */,
 				366B7E281AD7B2640008160D /* FMResultSet.m in Sources */,

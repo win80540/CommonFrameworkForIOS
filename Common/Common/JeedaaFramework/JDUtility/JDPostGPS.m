@@ -24,7 +24,7 @@
     return _instance;
 }
 -(CLLocation*)getLocationInfo{
-#if TARGET_IPHONE_SIMULATOR
+#if   defined(DEBUG) || TARGET_IPHONE_SIMULATOR
     self.location=[[CLLocation alloc] initWithLatitude:29.884939 longitude:121.635146];
     return self.location;
 #else
@@ -85,7 +85,7 @@
 #endif    
 }
 -(BOOL)getAddressByLocation:(CLLocation*)location{
-#if TARGET_IPHONE_SIMULATOR
+#if defined(DEBUG) || TARGET_IPHONE_SIMULATOR
     
     self.address=NSLocalizedString(@"中国浙江省宁波市鄞州区梅墟街道聚贤路", nil);
     return true;
