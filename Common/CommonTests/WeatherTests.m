@@ -33,21 +33,25 @@
 
 -(void)testPerformanceWeather{
     // This is an example of a performance test case.
-    [self measureBlock:^{
+//    [self measureBlock:^{
     JDWeatherInfo *weatherInfo = [[JDWeatherInfoHelper shareInstance] getLocalWeatherInfoRelocation:true];
     XCTAssertNotNil(weatherInfo,@"get weather faild");
-    dispatch_group_t t = dispatch_group_create();
-    dispatch_group_enter(t);
+    XCTestExpectation *expectation =  [self expectationWithDescription:@"getweather"];
     NSURL *url = [[JDWeatherInfoHelper shareInstance] getSinaWeatherIconURL:weatherInfo onDay:false];
     [[HttpHelp sharedHTTPHelp] loadImage:[url absoluteString] Success:^(UIImage *image) {
         XCTAssertNotNil(image,@"image nil");
-        dispatch_group_leave(t);
+        [expectation fulfill];
     } Error:^(NSError *error) {
-        dispatch_group_leave(t);
+        [expectation fulfill];
     }];
-    long result =  dispatch_group_wait(t, DISPATCH_TIME_FOREVER);
-    XCTAssertEqual(result, 0,@"time out");
+    [self waitForExpectationsWithTimeout:10 handler:^(NSError *error) {
+        if (error) {
+            XCTFail(@"request failed");
+
+        }
     }];
+
+//    }];
 }
 
 - (void)testPerformanceExample {
