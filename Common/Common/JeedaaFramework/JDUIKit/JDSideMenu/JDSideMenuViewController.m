@@ -141,9 +141,22 @@
     if(orientation==_orientation){
         return;
     }
+    CGSize size = [[UIScreen mainScreen] bounds].size;
+    if (self.leftMenuController) {
+        switch (orientation) {
+            case UIDeviceOrientationLandscapeLeft:
+            case UIDeviceOrientationLandscapeRight:
+                size=CGSizeMake(MAX(size.width, size.height), MIN(size.width, size.height));
+                break;
+            default:
+                size=CGSizeMake(MIN(size.width, size.height), MAX(size.width, size.height));
+                break;
+        }
+        DLog(@"<Common> JDSideMenuView size ( width:%f,height:%f )",size.width,size.height);
+        [_LeftView setFrame: CGRectMake(-size.width/2.0, 0, size.width/5.0*4, size.height)];
+    }
     [self hidenMenu];
     _orientation=orientation;
-
 }
 #pragma mark - pan gesture handler
 -(void)panGestureRecognizerHandler:(UIPanGestureRecognizer *)sender{
@@ -151,9 +164,16 @@
     switch (sender.state) {
         case UIGestureRecognizerStateBegan:
             if(!_isShowed){
+                if (self.leftMenuController) {
+                    [self.leftMenuController viewWillAppear:false];
+                }
                 _LeftView.center=CGPointMake(-CGRectGetWidth(self.view.bounds)/2.0+CGRectGetWidth(_LeftView.bounds)/2.0, CGRectGetMidY(_LeftView.bounds));
                 _MainView.center=CGPointMake(CGRectGetMidX(self.view.bounds), CGRectGetMidY(self.view.bounds));
                 _maskView.alpha=_hideAlpha;
+            }else{
+                if (self.leftMenuController) {
+                    [self.leftMenuController viewWillDisappear:false];
+                }
             }
             _mainViewCenter=_MainView.center;
             _menuViewCenter=_LeftView.center;
@@ -214,7 +234,9 @@
     _maskView.alpha=_showAlpha;
     _isShowed=true;
     [UIView commitAnimations];
-    [self.leftMenuController viewDidAppear:false];
+    if (self.leftMenuController) {
+        [self.leftMenuController viewDidAppear:false];
+    }
 }
 -(void)hidenMenu{
     [UIView beginAnimations:nil context:NULL];
@@ -227,7 +249,9 @@
     _maskView.alpha=_hideAlpha;
     _isShowed=false;
     [UIView commitAnimations];
-    [self.leftMenuController viewDidDisappear:false];
+    if (self.leftMenuController) {
+        [self.leftMenuController viewDidDisappear:false];
+    }
 }
 
 #pragma  mark - rotate orientation 
@@ -235,9 +259,7 @@
     return YES;
 }
 -(NSUInteger)supportedInterfaceOrientations{
-//    if (_isShowed) {
-//        return 0;
-//    }
+    DLog(@" %@ supportedInterfaceOrientations",NSStringFromClass([self class]));
     return UIInterfaceOrientationMaskAll;
 }
 -(UIInterfaceOrientation)preferredInterfaceOrientationForPresentation{
