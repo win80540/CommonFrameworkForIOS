@@ -21,4 +21,6 @@
 #import <Common/MMProgressHUD.h>
 #import <Common/SGFocusImage.h>
 #import <Common/JDAppStoreCheckUpdate.h>
+#import <Common/TKWebView.h>
+#import <Common/TKQRScanViewController.h>
 #endif

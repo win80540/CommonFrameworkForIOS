@@ -876,4 +876,134 @@ static CGRect oldframe;
     UIGraphicsEndImageContext();
     return snapshot;
 }
+//制作纯色图片
++(UIImage *)image:(UIImage *)image FillColor:(UIColor *)color
+{
+    UIGraphicsBeginImageContextWithOptions(image.size, NO, image.scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(context, 0, image.size.height);
+    CGContextScaleCTM(context, 1.0, -1.0);
+    CGContextSetBlendMode(context, kCGBlendModeNormal);
+    CGRect rect = CGRectMake(0, 0, image.size.width, image.size.height);
+    CGContextClipToMask(context, rect, image.CGImage);
+    [color setFill];
+    CGContextFillRect(context, rect);
+    UIImage*newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return newImage;
+}
+//替换图片颜色
++ (UIImage*)replaceColor:(UIColor*)color ToColor:(UIColor *)toColor inImage:(UIImage*)image withTolerance:(float)tolerance
+{
+    CGImageRef imageRef = [image CGImage];
+    
+    NSUInteger width = CGImageGetWidth(imageRef);
+    NSUInteger height = CGImageGetHeight(imageRef);
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    
+    NSUInteger bytesPerPixel = 4;
+    NSUInteger bytesPerRow = bytesPerPixel * width;
+    NSUInteger bitsPerComponent = 8;
+    NSUInteger bitmapByteCount = bytesPerRow * height;
+    
+    unsigned char *rawData = (unsigned char*) calloc(bitmapByteCount, sizeof(unsigned char));
+    
+    CGContextRef context = CGBitmapContextCreate(rawData, width, height,
+                                                 bitsPerComponent, bytesPerRow, colorSpace,
+                                                 kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
+    CGColorSpaceRelease(colorSpace);
+    
+    CGContextDrawImage(context, CGRectMake(0, 0, width, height), imageRef);
+    
+    CGColorRef cgColor = [color CGColor];
+    const CGFloat *components = CGColorGetComponents(cgColor);
+    float r = components[0];
+    float g = components[1];
+    float b = components[2];
+    float a = components[3]; // not needed
+    
+    r = r * 255.0;
+    g = g * 255.0;
+    b = b * 255.0;
+    a = a * 255.0;
+    
+    components=CGColorGetComponents(toColor.CGColor);
+    float tR=components[0];
+    float tG=components[1];
+    float tB=components[2];
+    float tA=components[3];
+    tR *=  255.0;
+    tG *= 255.0;
+    tB *= 255.0;
+    tA *= 255.0;
+    const float redRange[2] = {
+        MAX(r - (tolerance / 2.0), 0.0),
+        MIN(r + (tolerance / 2.0), 255.0)
+    };
+    
+    const float greenRange[2] = {
+        MAX(g - (tolerance / 2.0), 0.0),
+        MIN(g + (tolerance / 2.0), 255.0)
+    };
+    
+    const float blueRange[2] = {
+        MAX(b - (tolerance / 2.0), 0.0),
+        MIN(b + (tolerance / 2.0), 255.0)
+    };
+    
+    int byteIndex = 0;
+    
+    while (byteIndex < bitmapByteCount) {
+        unsigned char red   = rawData[byteIndex];
+        unsigned char green = rawData[byteIndex + 1];
+        unsigned char blue  = rawData[byteIndex + 2];
+        
+        if (((red >= redRange[0]) && (red <= redRange[1])) &&
+            ((green >= greenRange[0]) && (green <= greenRange[1])) &&
+            ((blue >= blueRange[0]) && (blue <= blueRange[1]))) {
+            // make the pixel transparent
+            //
+            rawData[byteIndex] = tR;
+            rawData[byteIndex + 1] = tG;
+            rawData[byteIndex + 2] = tB;
+            rawData[byteIndex + 3] = tA;
+        }
+        
+        byteIndex += 4;
+    }
+    
+    UIImage *result = [UIImage imageWithCGImage:CGBitmapContextCreateImage(context)];
+    
+    CGContextRelease(context);
+    free(rawData);
+    
+    return result;
+}
+
+//将颜色替换为透明
++(UIImage *)changeColorTo:(NSMutableArray*) array Transparent: (UIImage *)image
+{
+    CGImageRef rawImageRef=image.CGImage;
+    
+    //    const float colorMasking[6] = {222, 255, 222, 255, 222, 255};
+    
+    const CGFloat colorMasking[6] = {[[array objectAtIndex:0] floatValue], [[array objectAtIndex:1] floatValue], [[array objectAtIndex:2] floatValue], [[array objectAtIndex:3] floatValue], [[array objectAtIndex:4] floatValue], [[array objectAtIndex:5] floatValue]};
+    
+    
+    UIGraphicsBeginImageContext(image.size);
+    CGImageRef maskedImageRef=CGImageCreateWithMaskingColors(rawImageRef, colorMasking);
+    {
+        //if in iphone
+        CGContextTranslateCTM(UIGraphicsGetCurrentContext(), 0.0, image.size.height);
+        CGContextScaleCTM(UIGraphicsGetCurrentContext(), 1.0, -1.0);
+    }
+    
+    CGContextDrawImage(UIGraphicsGetCurrentContext(), CGRectMake(0, 0, image.size.width, image.size.height), maskedImageRef);
+    UIImage *result = UIGraphicsGetImageFromCurrentImageContext();
+    CGImageRelease(maskedImageRef);
+    UIGraphicsEndImageContext();
+    return result;
+}
+
+
 @end

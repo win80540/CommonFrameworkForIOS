@@ -44,4 +44,10 @@
 -(void)printTransform:(CGAffineTransform) transform;
 //截取屏幕区域
 +(UIImage *)snapshotRect:(CGRect)rect;
+//制作纯色图片
++(UIImage *)image:(UIImage *)image FillColor:(UIColor *)color;
+//替换图片颜色
++ (UIImage*)replaceColor:(UIColor*)color ToColor:(UIColor *)toColor inImage:(UIImage*)image withTolerance:(float)tolerance;
+//将颜色替换为透明
++(UIImage *)changeColorTo:(NSMutableArray*) array Transparent: (UIImage *)image;
 @end

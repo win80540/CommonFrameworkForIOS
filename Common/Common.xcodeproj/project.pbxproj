@@ -176,6 +176,25 @@
 		366B7E8F1AD7C7A00008160D /* JDDAL.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B7E8D1AD7C5220008160D /* JDDAL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		366B7E901AD7C7A40008160D /* JDSecret.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B7E8C1AD7C4E50008160D /* JDSecret.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		366B7E911AD7C7A60008160D /* JDNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B7E8B1AD7C1DF0008160D /* JDNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36992D0A1ADFCF91004565D1 /* Demo.html in Resources */ = {isa = PBXBuildFile; fileRef = 36992D061ADFCF91004565D1 /* Demo.html */; };
+		36992D0B1ADFCF91004565D1 /* JeedaaNativeBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = 36992D071ADFCF91004565D1 /* JeedaaNativeBridge.js */; };
+		36992D0C1ADFCF91004565D1 /* TKWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 36992D081ADFCF91004565D1 /* TKWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36992D0D1ADFCF91004565D1 /* TKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36992D091ADFCF91004565D1 /* TKWebView.m */; };
+		36992D101ADFCFAA004565D1 /* TKQRScanViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 36992D0E1ADFCFAA004565D1 /* TKQRScanViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36992D111ADFCFAA004565D1 /* TKQRScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 36992D0F1ADFCFAA004565D1 /* TKQRScanViewController.m */; };
+		36992D201ADFD092004565D1 /* JSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 36992D131ADFD092004565D1 /* JSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36992D211ADFD092004565D1 /* NSObject+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 36992D141ADFD092004565D1 /* NSObject+SBJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36992D221ADFD092004565D1 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 36992D151ADFD092004565D1 /* NSObject+SBJSON.m */; };
+		36992D231ADFD092004565D1 /* NSString+SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 36992D161ADFD092004565D1 /* NSString+SBJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36992D241ADFD092004565D1 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 36992D171ADFD092004565D1 /* NSString+SBJSON.m */; };
+		36992D251ADFD092004565D1 /* SBJSON.h in Headers */ = {isa = PBXBuildFile; fileRef = 36992D181ADFD092004565D1 /* SBJSON.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36992D261ADFD092004565D1 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 36992D191ADFD092004565D1 /* SBJSON.m */; };
+		36992D271ADFD092004565D1 /* SBJsonBase.h in Headers */ = {isa = PBXBuildFile; fileRef = 36992D1A1ADFD092004565D1 /* SBJsonBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36992D281ADFD092004565D1 /* SBJsonBase.m in Sources */ = {isa = PBXBuildFile; fileRef = 36992D1B1ADFD092004565D1 /* SBJsonBase.m */; };
+		36992D291ADFD092004565D1 /* SBJsonParser.h in Headers */ = {isa = PBXBuildFile; fileRef = 36992D1C1ADFD092004565D1 /* SBJsonParser.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36992D2A1ADFD092004565D1 /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 36992D1D1ADFD092004565D1 /* SBJsonParser.m */; };
+		36992D2B1ADFD092004565D1 /* SBJsonWriter.h in Headers */ = {isa = PBXBuildFile; fileRef = 36992D1E1ADFD092004565D1 /* SBJsonWriter.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36992D2C1ADFD092004565D1 /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 36992D1F1ADFD092004565D1 /* SBJsonWriter.m */; };
 		369F26961ADCBEAD00CB51D9 /* JDAppStoreCheckUpdate.h in Headers */ = {isa = PBXBuildFile; fileRef = 369F26941ADCBEAD00CB51D9 /* JDAppStoreCheckUpdate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		369F26971ADCBEAD00CB51D9 /* JDAppStoreCheckUpdate.m in Sources */ = {isa = PBXBuildFile; fileRef = 369F26951ADCBEAD00CB51D9 /* JDAppStoreCheckUpdate.m */; };
 		36BBDA3A1AD8095D0014722E /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 36BBDA391AD8095D0014722E /* libsqlite3.dylib */; };
@@ -348,6 +367,25 @@
 		366B7E8B1AD7C1DF0008160D /* JDNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDNetwork.h; sourceTree = "<group>"; };
 		366B7E8C1AD7C4E50008160D /* JDSecret.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDSecret.h; sourceTree = "<group>"; };
 		366B7E8D1AD7C5220008160D /* JDDAL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDDAL.h; sourceTree = "<group>"; };
+		36992D061ADFCF91004565D1 /* Demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Demo.html; sourceTree = "<group>"; };
+		36992D071ADFCF91004565D1 /* JeedaaNativeBridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = JeedaaNativeBridge.js; sourceTree = "<group>"; };
+		36992D081ADFCF91004565D1 /* TKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKWebView.h; sourceTree = "<group>"; };
+		36992D091ADFCF91004565D1 /* TKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKWebView.m; sourceTree = "<group>"; };
+		36992D0E1ADFCFAA004565D1 /* TKQRScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKQRScanViewController.h; sourceTree = "<group>"; };
+		36992D0F1ADFCFAA004565D1 /* TKQRScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKQRScanViewController.m; sourceTree = "<group>"; };
+		36992D131ADFD092004565D1 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		36992D141ADFD092004565D1 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		36992D151ADFD092004565D1 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		36992D161ADFD092004565D1 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		36992D171ADFD092004565D1 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		36992D181ADFD092004565D1 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		36992D191ADFD092004565D1 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		36992D1A1ADFD092004565D1 /* SBJsonBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonBase.h; sourceTree = "<group>"; };
+		36992D1B1ADFD092004565D1 /* SBJsonBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonBase.m; sourceTree = "<group>"; };
+		36992D1C1ADFD092004565D1 /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
+		36992D1D1ADFD092004565D1 /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
+		36992D1E1ADFD092004565D1 /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
+		36992D1F1ADFD092004565D1 /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		369F26941ADCBEAD00CB51D9 /* JDAppStoreCheckUpdate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDAppStoreCheckUpdate.h; sourceTree = "<group>"; };
 		369F26951ADCBEAD00CB51D9 /* JDAppStoreCheckUpdate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDAppStoreCheckUpdate.m; sourceTree = "<group>"; };
 		36BBDA391AD8095D0014722E /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -460,6 +498,9 @@
 		366B7D461AD7B2630008160D /* JDUIKit */ = {
 			isa = PBXGroup;
 			children = (
+				36992D0E1ADFCFAA004565D1 /* TKQRScanViewController.h */,
+				36992D0F1ADFCFAA004565D1 /* TKQRScanViewController.m */,
+				36992D041ADFCF91004565D1 /* TKWebView */,
 				366B7D631AD7B2630008160D /* JDUIViewAnimation.h */,
 				366B7D641AD7B2630008160D /* JDUIViewAnimation.m */,
 				366B7D471AD7B2630008160D /* JDSideMenu */,
@@ -524,6 +565,7 @@
 		366B7D6E1AD7B2630008160D /* RefrenceLib */ = {
 			isa = PBXGroup;
 			children = (
+				36992D121ADFD092004565D1 /* SBJSON */,
 				366B7D6F1AD7B2630008160D /* AFNetworking */,
 				366B7D831AD7B2630008160D /* AsyncSocket */,
 				366B7D881AD7B2630008160D /* fmdb */,
@@ -707,6 +749,45 @@
 			path = SGFocusImage;
 			sourceTree = "<group>";
 		};
+		36992D041ADFCF91004565D1 /* TKWebView */ = {
+			isa = PBXGroup;
+			children = (
+				36992D051ADFCF91004565D1 /* LocaliedWeb */,
+				36992D081ADFCF91004565D1 /* TKWebView.h */,
+				36992D091ADFCF91004565D1 /* TKWebView.m */,
+			);
+			path = TKWebView;
+			sourceTree = "<group>";
+		};
+		36992D051ADFCF91004565D1 /* LocaliedWeb */ = {
+			isa = PBXGroup;
+			children = (
+				36992D061ADFCF91004565D1 /* Demo.html */,
+				36992D071ADFCF91004565D1 /* JeedaaNativeBridge.js */,
+			);
+			path = LocaliedWeb;
+			sourceTree = "<group>";
+		};
+		36992D121ADFD092004565D1 /* SBJSON */ = {
+			isa = PBXGroup;
+			children = (
+				36992D131ADFD092004565D1 /* JSON.h */,
+				36992D141ADFD092004565D1 /* NSObject+SBJSON.h */,
+				36992D151ADFD092004565D1 /* NSObject+SBJSON.m */,
+				36992D161ADFD092004565D1 /* NSString+SBJSON.h */,
+				36992D171ADFD092004565D1 /* NSString+SBJSON.m */,
+				36992D181ADFD092004565D1 /* SBJSON.h */,
+				36992D191ADFD092004565D1 /* SBJSON.m */,
+				36992D1A1ADFD092004565D1 /* SBJsonBase.h */,
+				36992D1B1ADFD092004565D1 /* SBJsonBase.m */,
+				36992D1C1ADFD092004565D1 /* SBJsonParser.h */,
+				36992D1D1ADFD092004565D1 /* SBJsonParser.m */,
+				36992D1E1ADFD092004565D1 /* SBJsonWriter.h */,
+				36992D1F1ADFD092004565D1 /* SBJsonWriter.m */,
+			);
+			path = SBJSON;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -774,6 +855,15 @@
 				366B7E071AD7B2640008160D /* AFHTTPRequestOperation.h in Headers */,
 				366B7E671AD7B2640008160D /* UIImageView+HighlightedWebCache.h in Headers */,
 				366B7E241AD7B2640008160D /* FMDatabaseQueue.h in Headers */,
+				36992D2B1ADFD092004565D1 /* SBJsonWriter.h in Headers */,
+				36992D251ADFD092004565D1 /* SBJSON.h in Headers */,
+				36992D231ADFD092004565D1 /* NSString+SBJSON.h in Headers */,
+				36992D101ADFCFAA004565D1 /* TKQRScanViewController.h in Headers */,
+				36992D201ADFD092004565D1 /* JSON.h in Headers */,
+				36992D0C1ADFCF91004565D1 /* TKWebView.h in Headers */,
+				36992D271ADFD092004565D1 /* SBJsonBase.h in Headers */,
+				36992D291ADFD092004565D1 /* SBJsonParser.h in Headers */,
+				36992D211ADFD092004565D1 /* NSObject+SBJSON.h in Headers */,
 				366B7DFF1AD7B2640008160D /* NSString+MD5.h in Headers */,
 				366B7DE91AD7B2630008160D /* HttpHelp.h in Headers */,
 				366B7DFB1AD7B2640008160D /* JDSvUDIDTools.h in Headers */,
@@ -881,6 +971,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				366B7E2B1AD7B2640008160D /* MJRefresh.bundle in Resources */,
+				36992D0A1ADFCF91004565D1 /* Demo.html in Resources */,
+				36992D0B1ADFCF91004565D1 /* JeedaaNativeBridge.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -925,8 +1017,10 @@
 				366B7E4D1AD7B2640008160D /* MKAnnotationView+WebCache.m in Sources */,
 				366B7E3A1AD7B2640008160D /* MMProgressHUD+Animations.m in Sources */,
 				366B7E2E1AD7B2640008160D /* MJRefreshBaseView.m in Sources */,
+				36992D2A1ADFD092004565D1 /* SBJsonParser.m in Sources */,
 				366B7DEE1AD7B2630008160D /* JDDALSQLite.m in Sources */,
 				366B7E031AD7B2640008160D /* JDWeatherInfo.m in Sources */,
+				36992D221ADFD092004565D1 /* NSObject+SBJSON.m in Sources */,
 				366B7E571AD7B2640008160D /* SDWebImageDownloader.m in Sources */,
 				366B7E591AD7B2640008160D /* SDWebImageDownloaderOperation.m in Sources */,
 				366B7E621AD7B2640008160D /* UIImage+GIF.m in Sources */,
@@ -934,14 +1028,17 @@
 				366B7E0C1AD7B2640008160D /* AFHTTPSessionManager.m in Sources */,
 				366B7E1F1AD7B2640008160D /* FMDatabase.m in Sources */,
 				366B7DEC1AD7B2630008160D /* JDBaseModel.m in Sources */,
+				36992D261ADFD092004565D1 /* SBJSON.m in Sources */,
 				366B7E321AD7B2640008160D /* MJRefreshFooterView.m in Sources */,
 				366B7DE81AD7B2630008160D /* Http+NSObject.m in Sources */,
 				366B7E2A1AD7B2640008160D /* GDataXMLNode.m in Sources */,
+				36992D281ADFD092004565D1 /* SBJsonBase.m in Sources */,
 				366B7E531AD7B2640008160D /* SDWebImageCompat.m in Sources */,
 				366B7E0F1AD7B2640008160D /* AFNetworkReachabilityManager.m in Sources */,
 				366B7E191AD7B2640008160D /* AFURLSessionManager.m in Sources */,
 				366B7E421AD7B2640008160D /* MMProgressHUDViewController.m in Sources */,
 				366B7E4F1AD7B2640008160D /* NSData+ImageContentType.m in Sources */,
+				36992D0D1ADFCF91004565D1 /* TKWebView.m in Sources */,
 				366B7E681AD7B2640008160D /* UIImageView+HighlightedWebCache.m in Sources */,
 				366B7E401AD7B2640008160D /* MMProgressHUDOverlayView.m in Sources */,
 				366B7E601AD7B2640008160D /* UIButton+WebCache.m in Sources */,
@@ -949,8 +1046,10 @@
 				366B7E6A1AD7B2640008160D /* UIImageView+WebCache.m in Sources */,
 				366B7E1B1AD7B2640008160D /* AsyncSocket.m in Sources */,
 				366B7E231AD7B2640008160D /* FMDatabasePool.m in Sources */,
+				36992D111ADFCFAA004565D1 /* TKQRScanViewController.m in Sources */,
 				366B7DEA1AD7B2630008160D /* HttpHelp.m in Sources */,
 				366B7DFC1AD7B2640008160D /* JDSvUDIDTools.m in Sources */,
+				36992D241ADFD092004565D1 /* NSString+SBJSON.m in Sources */,
 				366B7E131AD7B2640008160D /* AFURLConnectionOperation.m in Sources */,
 				366B7E3B1AD7B2640008160D /* MMProgressHUD+Class.m in Sources */,
 				366B7E381AD7B2640008160D /* MMLinearProgressView.m in Sources */,
@@ -972,6 +1071,7 @@
 				366B7E641AD7B2640008160D /* UIImage+MultiFormat.m in Sources */,
 				366B7E491AD7B2640008160D /* MMVectorImage.m in Sources */,
 				366B7DF41AD7B2640008160D /* JDImageTools.m in Sources */,
+				36992D2C1ADFD092004565D1 /* SBJsonWriter.m in Sources */,
 				366B7E511AD7B2640008160D /* SDImageCache.m in Sources */,
 				369F26971ADCBEAD00CB51D9 /* JDAppStoreCheckUpdate.m in Sources */,
 				366B7E301AD7B2640008160D /* MJRefreshConst.m in Sources */,

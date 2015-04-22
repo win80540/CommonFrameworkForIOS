@@ -1,0 +1,27 @@
+﻿<html>  
+    <head>  
+        <meta content="text/html; charset=utf-8" http-equiv="content-type">  
+        <title>js调用ocDemo</title>  
+        <script type="text/javascript" src="JeedaaNativeBridge.js"></script>
+        <script type="text/javaScript">
+            if (JeedaaNativeBridge.isAPP()){
+            alert(navigator.userAgent);
+            }
+            function RegisterJPushClick() {
+                JeedaaNativeBridge.RegisterJPush('124', function () {
+                    alert('124');
+                });
+            }
+            function scanClick() {
+                JeedaaNativeBridge.CallQRCode();
+            }
+            
+        </script>  
+    </head>  
+    <body>  
+        <p><input type="text" id="text1" value="我来自ios苹果"/></p>  
+        <p><input type="text" id="text2" value="我来自earth地球"/></p>  
+      <p><input type="button" id="enter" value="registerJPush" onclick="RegisterJPushClick();"/></p>  
+       <p><input type="button" id="scan" value="scan" onclick="scanClick();"/></p>  
+    </body>  
+</html>  
