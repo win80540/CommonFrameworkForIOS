@@ -176,8 +176,8 @@
 		366B7E8F1AD7C7A00008160D /* JDDAL.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B7E8D1AD7C5220008160D /* JDDAL.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		366B7E901AD7C7A40008160D /* JDSecret.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B7E8C1AD7C4E50008160D /* JDSecret.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		366B7E911AD7C7A60008160D /* JDNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 366B7E8B1AD7C1DF0008160D /* JDNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3687AF911B8EBB9C0021C15D /* KLTNativeBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = 3687AF901B8EBB9C0021C15D /* KLTNativeBridge.js */; };
 		36992D0A1ADFCF91004565D1 /* Demo.html in Resources */ = {isa = PBXBuildFile; fileRef = 36992D061ADFCF91004565D1 /* Demo.html */; };
-		36992D0B1ADFCF91004565D1 /* JeedaaNativeBridge.js in Resources */ = {isa = PBXBuildFile; fileRef = 36992D071ADFCF91004565D1 /* JeedaaNativeBridge.js */; };
 		36992D0C1ADFCF91004565D1 /* TKWebView.h in Headers */ = {isa = PBXBuildFile; fileRef = 36992D081ADFCF91004565D1 /* TKWebView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		36992D0D1ADFCF91004565D1 /* TKWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 36992D091ADFCF91004565D1 /* TKWebView.m */; };
 		36992D101ADFCFAA004565D1 /* TKQRScanViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 36992D0E1ADFCFAA004565D1 /* TKQRScanViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -367,8 +367,8 @@
 		366B7E8B1AD7C1DF0008160D /* JDNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDNetwork.h; sourceTree = "<group>"; };
 		366B7E8C1AD7C4E50008160D /* JDSecret.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDSecret.h; sourceTree = "<group>"; };
 		366B7E8D1AD7C5220008160D /* JDDAL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JDDAL.h; sourceTree = "<group>"; };
+		3687AF901B8EBB9C0021C15D /* KLTNativeBridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = KLTNativeBridge.js; sourceTree = "<group>"; };
 		36992D061ADFCF91004565D1 /* Demo.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Demo.html; sourceTree = "<group>"; };
-		36992D071ADFCF91004565D1 /* JeedaaNativeBridge.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = JeedaaNativeBridge.js; sourceTree = "<group>"; };
 		36992D081ADFCF91004565D1 /* TKWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKWebView.h; sourceTree = "<group>"; };
 		36992D091ADFCF91004565D1 /* TKWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TKWebView.m; sourceTree = "<group>"; };
 		36992D0E1ADFCFAA004565D1 /* TKQRScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TKQRScanViewController.h; sourceTree = "<group>"; };
@@ -762,8 +762,8 @@
 		36992D051ADFCF91004565D1 /* LocaliedWeb */ = {
 			isa = PBXGroup;
 			children = (
+				3687AF901B8EBB9C0021C15D /* KLTNativeBridge.js */,
 				36992D061ADFCF91004565D1 /* Demo.html */,
-				36992D071ADFCF91004565D1 /* JeedaaNativeBridge.js */,
 			);
 			path = LocaliedWeb;
 			sourceTree = "<group>";
@@ -972,7 +972,7 @@
 			files = (
 				366B7E2B1AD7B2640008160D /* MJRefresh.bundle in Resources */,
 				36992D0A1ADFCF91004565D1 /* Demo.html in Resources */,
-				36992D0B1ADFCF91004565D1 /* JeedaaNativeBridge.js in Resources */,
+				3687AF911B8EBB9C0021C15D /* KLTNativeBridge.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

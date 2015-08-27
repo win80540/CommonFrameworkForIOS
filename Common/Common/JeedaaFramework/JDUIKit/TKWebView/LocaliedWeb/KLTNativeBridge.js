@@ -1,16 +1,17 @@
+
 //
-//  JeedaaNativeBridge.js
-//  UIWebView-Call-ObjC and Java
+//  KLTNativeBridge.js
+//  UIWebView-Call-ObjC and Javascript
 //
-//  Created by Ìï¿­ on 02/09/15.
-//  Copyright 2015 Jeedaa. All rights reserved.
+//  Created by Klueze on 02/09/15.
+//  Copyright 2015 KLT. All rights reserved.
 //
-var JeedaaNativeBridge = new function () {
-    //IOS µ÷ÓÃÊµÏÖ 
-    this.JeedaaIOSFramework = new function () {
+var KLTNativeBridge = new function () {
+    //iOS 
+    this.KLTIOSFramework = new function () {
         var _callbacksCount = 1;
         var _callbacks = {};
-        // »Øµ÷
+        //è°ƒç”¨å›è°ƒ
         this.resultForCallback = function (callbackId, resultArray) {
             try {
                 var callback = _callbacks[callbackId];
@@ -27,14 +28,14 @@ var JeedaaNativeBridge = new function () {
                 _callbacks[callbackId] = callback;
 
             var iframe = document.createElement("IFRAME");
-            iframe.setAttribute("src", "jeedaa-objc://" + functionName + ":" + callbackId + ":" + encodeURIComponent(JSON.stringify(args)));
+            iframe.setAttribute("src", "NEFinace://" + functionName + ":" + callbackId + ":" + encodeURIComponent(JSON.stringify(args)));
             document.documentElement.appendChild(iframe);
             iframe.parentNode.removeChild(iframe);
             iframe = null;
         }
     }
 
-    //ÅĞ¶ÏÊÇ·ñÊÇANDROIDÉè±¸
+    //åˆ¤æ–­æ˜¯å¦æ˜¯Android
     var _isAndroid = function () {
         if (window.seabuy || window.seabuy1) {
             return true;
@@ -43,11 +44,11 @@ var JeedaaNativeBridge = new function () {
     }
 
     this.isAPP =function(){
-        return (navigator.userAgent.indexOf('seabuyapp')>0);
+        return (navigator.userAgent.indexOf('NEFinance')>0);
     }
-    //×¢²áJPush 
-    //userID ÓÃ»§ID
-    //callback »Øµ÷º¯Êı
+    //æ³¨å†ŒPush 
+    //userID ç”¨æˆ·ID
+    //callback å›è°ƒ
     this.RegisterJPush = function (userID, callback) {
         userID=userID-'';
         if (_isAndroid()) {
@@ -57,16 +58,16 @@ var JeedaaNativeBridge = new function () {
                 }
             }
         } else {
-            JeedaaNativeBridge.JeedaaIOSFramework.call('registerJPush', [userID], callback);
+            KLTNativeBridge.KLTIOSFramework.call('registerJPush', [userID], callback);
         }
     }
 
-    //µ÷ÓÃÉ¨Ãè¶şÎ¬Âë
+    //è°ƒç”¨æ‰«æäºŒç»´ç 
     this.CallQRCode = function () {
         if (_isAndroid()) {
             seabuy.CallQRCode();
         } else {
-            JeedaaNativeBridge.JeedaaIOSFramework.call('callQRCode');
+            KLTNativeBridge.KLTIOSFramework.call('callQRCode');
         }
     }
 

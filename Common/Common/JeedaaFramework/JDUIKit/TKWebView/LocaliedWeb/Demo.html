@@ -2,18 +2,18 @@
     <head>  
         <meta content="text/html; charset=utf-8" http-equiv="content-type">  
         <title>js调用ocDemo</title>  
-        <script type="text/javascript" src="JeedaaNativeBridge.js"></script>
+        <script type="text/javascript" src="KLTNativeBridge.js"></script>
         <script type="text/javaScript">
-            if (JeedaaNativeBridge.isAPP()){
-            alert(navigator.userAgent);
+            if (KLTNativeBridge.isAPP()){
+                alert(navigator.userAgent);
             }
             function RegisterJPushClick() {
-                JeedaaNativeBridge.RegisterJPush('124', function () {
+                KLTNativeBridge.RegisterJPush('124', function () {
                     alert('124');
                 });
             }
             function scanClick() {
-                JeedaaNativeBridge.CallQRCode();
+                KLTNativeBridge.CallQRCode();
             }
             
         </script>  

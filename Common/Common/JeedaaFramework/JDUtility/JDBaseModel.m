@@ -19,30 +19,30 @@ static NSMutableDictionary *_dicForTable;
     self=[super init];
     if (nil!=self) {
         self->_undifinedKeyDic=[NSMutableDictionary dictionary];
-        [self initValue];
+        //[self initValue];
     }
     return self;
 }
 
--(void)initValue{
-    unsigned int propertyCount=0;
-    objc_property_t *propertyArray=class_copyPropertyList([self class], &propertyCount);
-    for (unsigned int i=0; i<propertyCount; i++) {
-        objc_property_t propertyItem=propertyArray[i];
-        NSString *stringPropertyName=[NSString stringWithUTF8String:property_getName(propertyItem)];
-        NSString *attriutes= [NSString stringWithUTF8String:property_getAttributes(propertyItem)];
-        NSRange range=[attriutes rangeOfString:@"(?<=^T)(.+?)(?=,)"options:NSRegularExpressionSearch];
-        NSString *typeCode= [attriutes substringWithRange:range];
-        if([typeCode rangeOfString:@"String"].length>0){
-            [self setValue:@"" forKey:stringPropertyName];
-        }else if([typeCode rangeOfString:@"NSNumber"].length>0){
-            [self setValue:[NSNumber numberWithInt:0] forKey:stringPropertyName];
-        }else{
-            [self setValue:nil forKey:stringPropertyName];
-        }
-    }
-    free(propertyArray);
-}
+//-(void)initValue{
+//    unsigned int propertyCount=0;
+//    objc_property_t *propertyArray=class_copyPropertyList([self class], &propertyCount);
+//    for (unsigned int i=0; i<propertyCount; i++) {
+//        objc_property_t propertyItem=propertyArray[i];
+//        NSString *stringPropertyName=[NSString stringWithUTF8String:property_getName(propertyItem)];
+//        NSString *attriutes= [NSString stringWithUTF8String:property_getAttributes(propertyItem)];
+//        NSRange range=[attriutes rangeOfString:@"(?<=^T)(.+?)(?=,)"options:NSRegularExpressionSearch];
+//        NSString *typeCode= [attriutes substringWithRange:range];
+//        if([typeCode rangeOfString:@"String"].length>0){
+//            [self setValue:@"" forKey:stringPropertyName];
+//        }else if([typeCode rangeOfString:@"NSNumber"].length>0){
+//            [self setValue:[NSNumber numberWithInt:0] forKey:stringPropertyName];
+//        }else{
+//            [self setValue:nil forKey:stringPropertyName];
+//        }
+//    }
+//    free(propertyArray);
+//}
 
 -(id)initWithDictionary:(NSDictionary *)jsonData Extend:(BOOL)canExtend{
     self = [self init];

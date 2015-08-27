@@ -6,11 +6,9 @@
 //  Copyright 2015 田凯. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-#import "SBJSON.h"
 #import "TKQRScanViewController.h"
 
 @interface TKWebView : UIWebView <UIWebViewDelegate,TKQRScanDelegate> {
-  SBJSON *json;
   int alertCallbackId;
 }
 

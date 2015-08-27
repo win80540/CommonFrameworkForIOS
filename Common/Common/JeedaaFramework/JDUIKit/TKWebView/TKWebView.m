@@ -23,11 +23,6 @@
     // Set non-opaque in order to make "body{background-color:transparent}" working!
     self.opaque = NO;
       self.backgroundColor=[UIColor whiteColor];
-    
-    // Instanciate JSON parser library
-    json = [ SBJSON new ];
-    
-    
   }
   return self;
 }
@@ -56,8 +51,7 @@
 		int callbackId = [((NSString*)[components objectAtIndex:1]) intValue];
     NSString *argsAsString = [(NSString*)[components objectAtIndex:2]
                                 stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    NSArray *args = (NSArray*)[json objectWithString:argsAsString error:nil];
-    
+    NSArray *args = (NSArray*)[self getJSONObjectFromJSONString:argsAsString];
     [self handleCall:function callbackId:callbackId args:args];
     
     return NO;
@@ -71,6 +65,16 @@
     [self returnResultAfterDelay:@"function a(){ alert('123');} a();"];
 }
 */
+
+#pragma javascript Bridge Method
+-(NSString *)getJSONStringFromJSONObject:(id)objc{
+    NSData * jsonData = [NSJSONSerialization dataWithJSONObject:objc options:NSJSONWritingPrettyPrinted error:nil];
+    return [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+}
+
+-(id)getJSONObjectFromJSONString:(NSString *)strJSON{
+    return  [NSJSONSerialization JSONObjectWithData:[strJSON dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
+}
 -(void)jumpToUrlString:(NSString *)urlString{
     NSURL *url=[NSURL URLWithString:urlString];
     NSURLRequest *request=[NSURLRequest requestWithURL:url cachePolicy:NSURLRequestReloadRevalidatingCacheData timeoutInterval:60];
@@ -94,7 +98,7 @@
     va_end(argsList);
   }
 
-  NSString *resultArrayString = [json stringWithObject:resultArray allowScalar:YES error:nil];
+    NSString *resultArrayString = [self getJSONStringFromJSONObject:resultArray];
   
   // We need to perform selector with afterDelay 0 in order to avoid weird recursion stop
   // when calling NativeBridge in a recursion more then 200 times :s (fails ont 201th calls!!!)
@@ -111,22 +115,40 @@
 - (void)handleCall:(NSString*)functionName callbackId:(int)callbackId args:(NSArray*)args
 {
     
-    if (args && args.count>0) {
-        SEL funcSel=NSSelectorFromString([NSString stringWithFormat:@"%@CallbackID:Args:",functionName]);
-        if (funcSel!=nil) {
-            if([self respondsToSelector:funcSel]){
-                //((void(*)(id, SEL, id))objc_msgSend)(self, funcSel, args);
-                void(*action)(id, SEL, int,id) =(void(*)(id, SEL, int,id))objc_msgSend;
-                action(self,funcSel,callbackId,args);
+    if (callbackId==0) {
+        if (args && args.count>0) {
+            SEL funcSel=NSSelectorFromString([NSString stringWithFormat:@"%@Args:",functionName]);
+            if (funcSel!=nil) {
+                if([self respondsToSelector:funcSel]){
+                    void(*action)(id, SEL,id) =(void(*)(id, SEL,id))objc_msgSend;
+                    action(self,funcSel,args);
+                }
+            }
+        }else{
+            SEL funcSel=NSSelectorFromString(functionName);
+            if (funcSel!=nil) {
+                if([self respondsToSelector:funcSel]){
+                    void(*action)(id, SEL) =(void(*)(id, SEL))objc_msgSend;
+                    action(self,funcSel);
+                }
             }
         }
-       
     }else{
-        SEL funcSel=NSSelectorFromString([NSString stringWithFormat:@"%@CallbackID:",functionName]);
-        if (funcSel!=nil) {
-            if([self respondsToSelector:funcSel]){
-                void(*action)(id, SEL,int) =(void(*)(id, SEL,int))objc_msgSend;
-                action(self,funcSel,callbackId);
+        if (args && args.count>0) {
+            SEL funcSel=NSSelectorFromString([NSString stringWithFormat:@"%@CallbackID:Args:",functionName]);
+            if (funcSel!=nil) {
+                if([self respondsToSelector:funcSel]){
+                    void(*action)(id, SEL, int,id) =(void(*)(id, SEL, int,id))objc_msgSend;
+                    action(self,funcSel,callbackId,args);
+                }
+            }
+        }else{
+            SEL funcSel=NSSelectorFromString([NSString stringWithFormat:@"%@CallbackID:",functionName]);
+            if (funcSel!=nil) {
+                if([self respondsToSelector:funcSel]){
+                    void(*action)(id, SEL,int) =(void(*)(id, SEL,int))objc_msgSend;
+                    action(self,funcSel,callbackId);
+                }
             }
         }
     }
