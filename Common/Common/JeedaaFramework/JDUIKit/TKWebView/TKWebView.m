@@ -44,7 +44,7 @@
 	NSString *requestString = [[request URL] absoluteString];
     NSString *scheme =[[request URL] scheme];
   NSLog(@"request : %@",requestString);
-  if ([scheme isEqualToString:@"jeedaa-objc"] ) {
+  if ([scheme isEqualToString:@"KLT-objc"] ) {
     NSArray *components = [[[requestString componentsSeparatedByString:@"://"] objectAtIndex:1] componentsSeparatedByString:@":"];
     
     NSString *function = (NSString*)[components objectAtIndex:0];
@@ -102,7 +102,7 @@
   
   // We need to perform selector with afterDelay 0 in order to avoid weird recursion stop
   // when calling NativeBridge in a recursion more then 200 times :s (fails ont 201th calls!!!)
-  [self performSelector:@selector(returnResultAfterDelay:) withObject:[NSString stringWithFormat:@"JeedaaNativeBridge.JeedaaIOSFramework.resultForCallback(%d,%@);",callbackId,resultArrayString] afterDelay:0];
+  [self performSelector:@selector(returnResultAfterDelay:) withObject:[NSString stringWithFormat:@"KLTNativeBridge.KLTIOSFramework.resultForCallback(%d,%@);",callbackId,resultArrayString] afterDelay:0];
 }
 
 -(void)returnResultAfterDelay:(NSString*)str {
